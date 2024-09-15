@@ -87,11 +87,12 @@
 
         function openSpecificInstagramPost() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const postUrl = 'instagram://media?id=/C_5t4DBIX6n/?img_index=1';
+                const postUrl = 'instagram://p/C_5t4DBIX6n/?img_index=1';
                 
                 window.location.href = postUrl;
             } else {
-                alert("Please access this feature from a mobile device to view the post.");
+                const postUrl = 'https://www.instagram.com/p/C_5t4DBIX6n/?img_index=1';
+                window.location.href = postUrl;
             }
         }
 
