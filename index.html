@@ -47,60 +47,36 @@
         </svg>
         Share this image on Instagram
     </button>
-    <button id="instagramCameraButton" class="instagram-share-button">
-        Open Camera
-    </button>
     <button id="instagramPostButton" class="instagram-share-button">
-        Open post
+        Open post/camera
     </button>
     <button id="instagramSpecificPostButton" class="instagram-share-button">
-        Go to Specific Post
+        Go to specicif Post
     </button>
 
     <script>
         function shareToInstagram(imageUrl) {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const instagramUrl = `instagram://library?AssetPath=${encodeURIComponent(imageUrl)}`;
-                window.location.href = instagramUrl;
-                
-            } else {
-                alert("Please access this feature from a mobile device to share on Instagram.");
-            }
-        }
-        function openInstagramCamera() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const instagramUrl = 'instagram://camera';
-                window.location.href = instagramUrl;
-            } else {
-                alert("Please access this feature from a mobile device to open the camera.");
-            }
+            const instagramUrl = `https://www.instagram.com/library?AssetPath=${encodeURIComponent(imageUrl)}`;
+            window.location.href = instagramUrl;
+
         }
 
         function openInstagramPost() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const instagramUrl = 'https://www.instagram.com/create/story';
-                window.location.href = instagramUrl;
-            } else {
-                alert("Please access this feature from a mobile device to post.");
-            }
+            const instagramUrl = 'https://www.instagram.com/create/story';
+            window.location.href = instagramUrl;
+
         }
 
         function openSpecificInstagramPost() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const postUrl = 'https://www.instagram.com/p/C_5t4DBIX6n/?img_index=1';
-                
-                window.location.href = postUrl;
-            } else {
-                const postUrl = 'https://www.instagram.com/p/C_5t4DBIX6n/?img_index=1';
-                window.location.href = postUrl;
-            }
+            const postUrl = 'https://www.instagram.com/p/C_5t4DBIX6n/?img_index=1';
+            window.location.href = postUrl;
+            
         }
 
         document.getElementById('instagramShareButton').addEventListener('click', function() {
             const imageUrl = document.getElementById('shareImage').src;
             shareToInstagram(imageUrl);
         });
-        document.getElementById('instagramCameraButton').addEventListener('click', openInstagramCamera);
         document.getElementById('instagramPostButton').addEventListener('click', openInstagramPost);
         document.getElementById('instagramSpecificPostButton').addEventListener('click', openSpecificInstagramPost);
 
