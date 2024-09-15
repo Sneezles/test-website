@@ -56,7 +56,7 @@
 
     <script>
         function shareToInstagram(imageUrl) {
-            const instagramUrl = `https://www.instagram.com/library`;
+            const instagramUrl = `https://www.instagram.com/library?AssetPath=${encodeURIComponent(imageUrl)}`;
             window.location.href = instagramUrl;
 
         }
