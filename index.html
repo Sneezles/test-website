@@ -78,7 +78,7 @@
 
         function openInstagramPost() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const instagramUrl = 'instagram://library';
+                const instagramUrl = 'https://www.instagram.com/create/story';
                 window.location.href = instagramUrl;
             } else {
                 alert("Please access this feature from a mobile device to post.");
@@ -87,7 +87,7 @@
 
         function openSpecificInstagramPost() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const postUrl = 'instagram://p/C_5t4DBIX6n/?img_index=1';
+                const postUrl = 'https://www.instagram.com/p/C_5t4DBIX6n/?img_index=1';
                 
                 window.location.href = postUrl;
             } else {
